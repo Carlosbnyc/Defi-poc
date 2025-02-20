@@ -16,7 +16,7 @@ OS: Mac, Linux, Windows(An unexpected issue may arise)
 
 To get started with the project, clone the repository and install the necessary dependencies:
 
-git clone https://github.com/Crypto-dev-spec/Defi-poc.git
+git clone https://github.com/Crypto-dev-poc/Defi-poc.git
 
 cd Defi-poc
 
