@@ -1,46 +1,233 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #4b0082, #ff1493);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 0; /* Removes rounded edges */
+    width: 100%; /* Expands to full width */
+    max-width: 100%; /* Ensures no artificial limits */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 4rem); /* Adjusts between 2rem and 4rem based on screen size */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: font-size 0.3s ease-in-out; /* Smooth transition on resize */
+}
+
+header h2 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Adjusts between 1rem and 1.5rem */
+    font-weight: lighter;
+    opacity: 0.8;
+    transition: font-size 0.3s ease-in-out;
+}
+
+
+.band {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.band img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.band img:hover {
+    transform: scale(1.05);
+}
+
+
+.features {
+    width: 100%; 
+    max-width: 100%; 
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 0; 
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-header {
-    background: #333;
-    color: white;
+.features h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+
+.feature-item {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     padding: 20px;
+    margin: 15px 0;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
 }
 
-.hero img {
-    width: 300px;
-    max-width: 100%;
-    margin: 20px 0;
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.features {
-    margin: 20px;
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
 }
 
-.features ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.features li {
-    font-size: 18px;
-    margin: 10px 0;
+.feature-description {
+    font-size: 1rem;
+    color: #f0f0f0;
+    line-height: 1.6;
 }
 
 footer {
-    background: #222;
-    color: white;
-    padding: 10px;
-    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
     width: 100%;
-    bottom: 0;
+    text-align: center;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
 }
 
-@media (max-width: 600px) {
-    .hero img { width: 80%; }
-    .features li { font-size: 16px; }
+footer h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Adjusts dynamically */
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out;
+}
+footer p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 1024px) {
+    .band {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .band img {
+        width: 80%;
+    }
+
+    .features {
+        width: 85%;
+    }
+
+    .feature-item {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    .band img {
+        width: 90%;
+    }
+
+    .features {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .feature-item {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    footer h1 {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .band img {
+        width: 95%;
+    }
+
+    .features {
+        width: 98%;
+    }
+
+    .feature-item {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 15px;
+    }
 }
